@@ -50,6 +50,7 @@ class ProjectPage extends Component {
     return (
       <div>
         <Nav />
+        <h1>Current Projects</h1>
         { content }
       </div>
     );

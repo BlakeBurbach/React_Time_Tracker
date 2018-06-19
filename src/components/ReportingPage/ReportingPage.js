@@ -50,6 +50,7 @@ class ReportingPage extends Component {
     return (
       <div>
         <Nav />
+        <h1>Project Reports</h1>
         { content }
       </div>
     );

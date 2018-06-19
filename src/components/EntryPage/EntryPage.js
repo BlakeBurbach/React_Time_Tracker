@@ -50,6 +50,7 @@ class EntryPage extends Component {
     return (
       <div>
         <Nav />
+        <h1>Time Entries</h1>
         { content }
       </div>
     );

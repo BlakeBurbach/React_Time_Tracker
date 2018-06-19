@@ -41,7 +41,7 @@ const App = () => (
         />
         <Route 
           path='/projects'
-          component={ReportingPage}
+          component={ProjectPage}
         />
         <Route 
           path='/time_entries'
