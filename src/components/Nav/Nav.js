@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WelcomeAndLogout from '../../components/WelcomeAndLogout/WelcomeAndLogout';
 
 const Nav = () => (
   <div className="navbar">
@@ -19,6 +20,9 @@ const Nav = () => (
           <Link to="/reports">
             Project Reports
           </Link>
+        </li>
+        <li>
+          <WelcomeAndLogout style={{float: 'right'}}/>
         </li>
       </ul>
     </div>
