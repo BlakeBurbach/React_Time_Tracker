@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-class Date extends Component {
+class SubmitTaskButton extends Component {
     render() {
         return (
             <div className="entryPageInput">
-                <label>Date</label>
-                <input type="date" />
+            <button>Submit</button>
             </div>
         )
     }
 }
 
-export default Date;
+export default SubmitTaskButton;

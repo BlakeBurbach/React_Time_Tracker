@@ -92,3 +92,8 @@ li a:hover {
 #welcomeLogout {
     float: right;
 }
+
+.entryPageInput {
+    float: left;
+    margin: 10px;
+}

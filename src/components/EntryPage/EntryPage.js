@@ -10,6 +10,7 @@ import ProjectSelector from './EntryPageComponents/ProjectSelector';
 import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
+import SubmitTaskButton from './EntryPageComponents/SubmitTaskButton';
 
 const mapStateToProps = state => ({
     user: state.user,
@@ -31,12 +32,15 @@ class EntryPage extends Component {
             <div>
                 <Nav />
                 <h1>Time Entries</h1>
-                <TaskDescription />
-                <ProjectSelector />
-                <Date />
-                <StartTime />
-                <EndTime />
-      </div>
+                <div>
+                    <TaskDescription />
+                    <ProjectSelector />
+                    <Date />
+                    <StartTime />
+                    <EndTime />
+                    <SubmitTaskButton />
+                </div>
+            </div>
         );
     }
 }
