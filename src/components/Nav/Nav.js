@@ -6,23 +6,25 @@ const Nav = () => (
   <div className="navbar">
     <div>
       <ul>
-        <li>
+        <li className="regularLi">
           <Link to="/projects">
             Current Projects
           </Link>
         </li>
-        <li>
+        <li className="regularLi">
           <Link to="/time_entries">
             Time Entries
           </Link>
         </li>
-        <li>
+        <li className="regularLi">
           <Link to="/reports">
             Project Reports
           </Link>
         </li>
         <li>
-          <WelcomeAndLogout style={{float: 'right'}}/>
+          <div id="welcomeLogout">
+            <WelcomeAndLogout />
+          </div>
         </li>
       </ul>
     </div>

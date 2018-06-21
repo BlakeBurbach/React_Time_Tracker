@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Nav from '../../components/Nav/Nav';
-
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
 
 const mapStateToProps = state => ({
-  user: state.user,
+  user: state.user
 });
 
 class WelcomeAndLogout extends Component {
@@ -16,15 +14,8 @@ class WelcomeAndLogout extends Component {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
   }
 
-  componentDidUpdate() {
-    if (!this.props.user.isLoading && this.props.user.userName === null) {
-      this.props.history.push('home');
-    }
-  }
-
   logout = () => {
     this.props.dispatch(triggerLogout());
-    // this.props.history.push('home');
   }
 
   render() {
@@ -33,11 +24,11 @@ class WelcomeAndLogout extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-          <h1
+          <h3
             id="welcome"
         >
             Welcome, { this.props.user.userName }!
-          </h1>
+          </h3>
           <button
             onClick={this.logout}
             id="logoutBtn"

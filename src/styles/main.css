@@ -10,7 +10,7 @@ body {
 .instructions {
     background-color: #00acb0;
     padding: 5px;
-    color: #ece7e7;
+    color: #ffffff;
 }
 
 form {
@@ -60,7 +60,7 @@ ul {
     overflow: hidden;
 }
 
-li {
+.regularLi {
     float: left;
 }
 
@@ -70,11 +70,25 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     text-decoration: underline;
     color: #eee;
+}
+
+#welcome {
+    float: left;
+    color: white;
+    font-weight: 100;
+}
+
+#logoutBtn {
+    float: right;
+    margin: 20px;
+}
+
+#welcomeLogout {
+    float: right;
 }
