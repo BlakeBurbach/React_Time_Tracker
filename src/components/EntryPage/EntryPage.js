@@ -17,10 +17,13 @@ const mapStateToProps = state => ({
 });
 
 class EntryPage extends Component {
+    // when component mounts, get all of the user info to know whether to allow access or not
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
     }
 
+    // if there is not a user that is logged in and now waiting for a username, push
+    // to the login page so no one can access the page without being logged in
     componentDidUpdate() {
         if (!this.props.user.isLoading && this.props.user.userName === null) {
             this.props.history.push('home');
@@ -42,8 +45,8 @@ class EntryPage extends Component {
                 </div>
             </div>
         );
-    }
-}
+    } // end render
+} // end EntryPage component
 
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(EntryPage);
