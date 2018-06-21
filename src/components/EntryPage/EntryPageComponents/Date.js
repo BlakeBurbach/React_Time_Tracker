@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+
 
 class Date extends Component {
     constructor() {
@@ -12,7 +12,7 @@ class Date extends Component {
 
     handleDate = (event) => {
         this.setState({
-            date: moment(event.target.value).format('YYYY-MM-DD')
+            date: event.target.value
         });
     }
 
@@ -20,7 +20,7 @@ class Date extends Component {
         return (
             <div className="entryPageInput">
                 <label>Date</label>
-                <input type="date" value={this.state.date} onChange={this.handleDate}/>
+                <input type="date" value={this.state.date} onChange={this.handleDate} />
             </div>
         )
     }

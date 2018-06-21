@@ -17,6 +17,12 @@ const mapStateToProps = state => ({
 });
 
 class EntryPage extends Component {
+    constructor() {
+        super();
+
+        this.state = {}
+    }
+
     // when component mounts, get all of the user info to know whether to allow access or not
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
@@ -32,7 +38,13 @@ class EntryPage extends Component {
 
     submit = () => {
         console.log('Submit function called');
+        this.setState({
+            ...this.state
+        }, () => { 
+            console.log('Entry Page state', this.state);
+        });
     }
+
 
     render() {
         return (
@@ -45,7 +57,7 @@ class EntryPage extends Component {
                     <Date />
                     <StartTime />
                     <EndTime />
-                    <SubmitTaskButton submit={this.submit}/>
+                    <SubmitTaskButton submit={this.submit} />
                 </div>
             </div>
         );
