@@ -13,9 +13,7 @@ class Date extends Component {
     handleDate = (event) => {
         this.setState({
             date: moment(event.target.value).format('YYYY-MM-DD')
-        }, ()=>{
-            console.log('Date select', this.state.date);
-        })
+        });
     }
 
     render() {
