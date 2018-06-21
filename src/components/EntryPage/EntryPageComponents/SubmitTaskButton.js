@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class SubmitTaskButton extends Component {
+
     render() {
         return (
             <div className="entryPageInput">
-            <button>Submit</button>
+                <button onClick={this.props.submit} >
+                    Submit
+                </button>
             </div>
         )
     }

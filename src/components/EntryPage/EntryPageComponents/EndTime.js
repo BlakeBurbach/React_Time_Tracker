@@ -19,7 +19,7 @@ class EndTime extends Component {
         return (
             <div className="entryPageInput">
                 <label>End Time</label>
-                <input type="time" value={this.state.end_time} onChange={this.handleEndTime}/>
+                <input type="time" value={this.state.end_time} onChange={this.handleEndTime} />
             </div>
         )
     }

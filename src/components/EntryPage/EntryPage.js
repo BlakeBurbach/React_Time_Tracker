@@ -30,6 +30,10 @@ class EntryPage extends Component {
         }
     }
 
+    submit = () => {
+        console.log('Submit function called');
+    }
+
     render() {
         return (
             <div>
@@ -41,7 +45,7 @@ class EntryPage extends Component {
                     <Date />
                     <StartTime />
                     <EndTime />
-                    <SubmitTaskButton />
+                    <SubmitTaskButton submit={this.submit}/>
                 </div>
             </div>
         );
