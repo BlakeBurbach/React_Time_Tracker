@@ -9,8 +9,6 @@ import {
 import Header from './components/Header/Header';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import UserPage from './components/UserPage/UserPage';
-import InfoPage from './components/InfoPage/InfoPage';
 import EntryPage from './components/EntryPage/EntryPage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
 import ReportingPage from './components/ReportingPage/ReportingPage';
