@@ -42,6 +42,9 @@ class EntryPage extends Component {
         }
     };
 
+    // TODO: send state to database on submission
+    // after submission and state sent to server, 
+    // clear the inputs by resetting state
     submit = (event) => {
         this.setState({
             task_description: '',
@@ -49,9 +52,11 @@ class EntryPage extends Component {
             date: '',
             start_time: '',
             end_time: ''
-        });
-    };
+        }); // end resetState
+    }; // end submit
 
+    // handle the change for any input and set it's corresponding
+    // state value to the change accordingly
     handleInputChange = event => {
         const target = event.target;
         const value = target.value;
@@ -61,8 +66,8 @@ class EntryPage extends Component {
             [name]: value
         }, () => {
             console.log('EntryPage state', this.state)
-        });
-    };
+        }); // end setState
+    }; // end handleInputChange
 
     render() {
         return (
