@@ -13,7 +13,7 @@ body {
     color: #ffffff;
 }
 
-form {
+#login_form {
     background-color: #dbd5d5;
     width: 30%;
     height: 250px;

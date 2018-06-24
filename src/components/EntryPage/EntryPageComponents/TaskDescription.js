@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
 
 class TaskDescription extends Component {
-    constructor(){
-        super();
 
-        this.state = {
-            task_description: ''
-        }
-    }
-
-    handleTaskInput = (event) => {
-        this.setState({
-            task_description: event.target.value
-        });
-    }
-
-
+    handleInputChange = (event) => {
+        this.props.handleInputChange(event);
+    };
 
     render() {
         return (
             <div className="entryPageInput">
             <label>Task </label>
-                <input type="text" placeholder="description" value={this.state.task_description} onChange={this.handleTaskInput}/>
+                <input type="text" name="task_description" placeholder="description" value={this.props.task_description} onChange={this.handleInputChange}/>
             </div>
         )
     }

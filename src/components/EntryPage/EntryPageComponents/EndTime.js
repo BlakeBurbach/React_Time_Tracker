@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
 
 class EndTime extends Component {
-    constructor() {
-        super();
 
-        this.state = {
-            end_time: ''
-        }
-    }
-
-    handleEndTime = (event) => {
-        this.setState({
-            end_time: event.target.value
-        });
-    }
+    handleInputChange = (event) => {
+        this.props.handleInputChange(event);
+    };
 
     render() {
         return (
             <div className="entryPageInput">
                 <label>End Time</label>
-                <input type="time" value={this.state.end_time} onChange={this.handleEndTime} />
+                <input type="time" name="end_time" value={this.props.end_time} onChange={this.handleInputChange} />
             </div>
         )
     }

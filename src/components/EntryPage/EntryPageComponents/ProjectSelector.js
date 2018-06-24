@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
 
 class ProjectSelector extends Component {
-    constructor(){
-        super();
 
-        this.state = {
-            project_name: ''
-        }
-    }
-
-    handleProjectSelect = (event) => {
-        this.setState({
-            project_name: event.target.value
-        });
-    }
+    handleInputChange = (event) => {
+        this.props.handleInputChange(event);
+    };
 
     render() {
         return (
             <div className="entryPageInput">
                 <label>Project </label>
-                <select value={this.state.project_name} onChange={this.handleProjectSelect}>
+                <select name="project_name" value={this.props.project_name} onChange={this.handleInputChange}>
                     <option>Select One</option>
                     <option value="project_1">project 1</option>
                     <option value="project_2">project 2</option>

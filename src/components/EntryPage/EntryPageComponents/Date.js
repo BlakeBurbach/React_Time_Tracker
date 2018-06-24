@@ -2,25 +2,16 @@ import React, { Component } from 'react';
 
 
 class Date extends Component {
-    constructor() {
-        super();
 
-        this.state = {
-            date: ''
-        }
-    }
-
-    handleDate = (event) => {
-        this.setState({
-            date: event.target.value
-        });
-    }
+    handleInputChange = (event) => {
+        this.props.handleInputChange(event);
+    };
 
     render() {
         return (
             <div className="entryPageInput">
                 <label>Date</label>
-                <input type="date" value={this.state.date} onChange={this.handleDate} />
+                <input type="date" name="date" value={this.props.date} onChange={this.handleInputChange} />
             </div>
         )
     }
