@@ -11,22 +11,27 @@ import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
 import SubmitTaskButton from './EntryPageComponents/SubmitTaskButton';
+import TimeEntry from './TimeEntry/TimeEntry';
 
 const mapStateToProps = state => ({
     user: state.user,
 });
 
+const initialState = {
+    task_description: '',
+    project_name: '',
+    date: '',
+    start_time: '',
+    end_time: ''
+};
+
+const TimeEntries = [];
+
 class EntryPage extends Component {
     constructor() {
         super();
 
-        this.state = {
-            task_description: '',
-            project_name: '',
-            date: '',
-            start_time: '',
-            end_time: ''
-        }
+        this.state = initialState;
     }
 
     // when component mounts, get all of the user info to know whether to allow access or not
@@ -46,13 +51,9 @@ class EntryPage extends Component {
     // after submission and state sent to server, 
     // clear the inputs by resetting state
     submit = (event) => {
-        this.setState({
-            task_description: '',
-            project_name: '',
-            date: '',
-            start_time: '',
-            end_time: ''
-        }); // end resetState
+        TimeEntries.push(this.state);
+        console.log(TimeEntries);
+        this.setState(initialState); // end resetState
     }; // end submit
 
     // handle the change for any input and set it's corresponding
@@ -70,6 +71,10 @@ class EntryPage extends Component {
     }; // end handleInputChange
 
     render() {
+        let keyID = 0;
+        let time_entry_table = TimeEntries.map(TimeEntry => {
+            return (<TimeEntry key={keyID++} TimeEntry={TimeEntry} />)
+        })
         return (
             <div>
                 <Nav />
@@ -81,6 +86,32 @@ class EntryPage extends Component {
                     <StartTime handleInputChange={this.handleInputChange} start_time={this.state.start_time} />
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Project
+                                </th>
+                                <th>
+                                    Task Description
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Start Time
+                                </th>
+                                <th>
+                                    End Time
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {time_entry_table}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         );
