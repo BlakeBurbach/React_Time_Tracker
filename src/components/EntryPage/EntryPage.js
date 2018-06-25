@@ -11,7 +11,6 @@ import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
 import SubmitTaskButton from './EntryPageComponents/SubmitTaskButton';
-import TimeEntry from './TimeEntry/TimeEntry';
 
 const mapStateToProps = state => ({
     user: state.user,
@@ -71,10 +70,7 @@ class EntryPage extends Component {
     }; // end handleInputChange
 
     render() {
-        let keyID = 0;
-        let time_entry_table = TimeEntries.map(TimeEntry => {
-            return (<TimeEntry key={keyID++} TimeEntry={TimeEntry} />)
-        })
+
         return (
             <div>
                 <Nav />
@@ -86,32 +82,6 @@ class EntryPage extends Component {
                     <StartTime handleInputChange={this.handleInputChange} start_time={this.state.start_time} />
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
-                </div>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Project
-                                </th>
-                                <th>
-                                    Task Description
-                                </th>
-                                <th>
-                                    Date
-                                </th>
-                                <th>
-                                    Start Time
-                                </th>
-                                <th>
-                                    End Time
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {time_entry_table}
-                        </tbody>
-                    </table>
                 </div>
             </div>
         );
