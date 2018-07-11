@@ -11,6 +11,7 @@ import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
 import SubmitTaskButton from './EntryPageComponents/SubmitTaskButton';
+import TimeEntryTable from './TimeEntryTable/TimeEntryTable';
 
 const mapStateToProps = state => ({
     user: state.user,
@@ -64,8 +65,6 @@ class EntryPage extends Component {
 
         this.setState({
             [name]: value
-        }, () => {
-            console.log('EntryPage state', this.state)
         }); // end setState
     }; // end handleInputChange
 
@@ -82,6 +81,8 @@ class EntryPage extends Component {
                     <StartTime handleInputChange={this.handleInputChange} start_time={this.state.start_time} />
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
+                    <br />
+                    <TimeEntryTable />
                 </div>
             </div>
         );

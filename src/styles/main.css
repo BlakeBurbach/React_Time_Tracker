@@ -97,3 +97,19 @@ li a:hover {
     float: left;
     margin: 10px;
 }
+
+.TaskEntryTable {
+   margin: 50px;
+   margin-left: 100px;
+   padding: 20px; 
+}
+
+tr th {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    font-size: 20px;
+}
