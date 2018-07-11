@@ -15,6 +15,7 @@ import TimeEntryTable from './TimeEntryTable/TimeEntryTable';
 
 const mapStateToProps = state => ({
     user: state.user,
+    state
 });
 
 const initialState = {
@@ -37,6 +38,7 @@ class EntryPage extends Component {
     // when component mounts, get all of the user info to know whether to allow access or not
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
+        this.props.dispatch({type: 'GET_TASK_ENTRIES'})
     }
 
     // if there is not a user that is logged in and now waiting for a username, push
@@ -67,6 +69,7 @@ class EntryPage extends Component {
             [name]: value
         }); // end setState
     }; // end handleInputChange
+
 
     render() {
 
