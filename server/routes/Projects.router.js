@@ -4,8 +4,8 @@ const router = express.Router();
 
 // GET route to retrieve all projects from database
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM projects WHERE project_user_id = $1;`;
-    pool.query(queryText, [userID]).then((result) => {
+    const queryText = `SELECT * FROM projects;`;
+    pool.query(queryText).then((result) => {
         console.log('ProjectRouter GET success', result);
         res.send(result.rows);
     }).catch((error) => {
