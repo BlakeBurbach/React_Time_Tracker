@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-const config = {
-    headers: { 'Content-Type': 'application/json' },
-    withCredentials: true,
-};
+// const config = {
+//     headers: { 'Content-Type': 'application/json' },
+//     withCredentials: true,
+// };
 
 function* TaskEntrySaga() {
     yield takeLatest('GET_TASK_ENTRIES', getTaskEntry);

@@ -25,7 +25,7 @@ class TimeEntryTable extends Component {
                             Date
                         </th>
                         <th>
-                            Total Time
+                            Total Hours
                         </th>
                         <th>
                             Edit
@@ -44,7 +44,7 @@ class TimeEntryTable extends Component {
                             7-7-2018
                         </td>
                         <td>
-                            40 hours
+                            40 hours 54 minutes
                         </td>
                         <td>
                             <button>Edit</button>
