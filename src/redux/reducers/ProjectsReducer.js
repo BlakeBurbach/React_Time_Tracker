@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const SetProjects = (state = null, action) => {
+const SetProjects = (state = [], action) => {
     switch (action.type) {
         case 'SET_PROJECTS':
             return action.payload;

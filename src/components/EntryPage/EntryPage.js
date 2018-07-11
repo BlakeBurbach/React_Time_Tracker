@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
 
 const initialState = {
     task_description: '',
-    project_name: '',
+    project_id: '',
     date: '',
     start_time: '',
     end_time: ''
@@ -38,8 +38,8 @@ class EntryPage extends Component {
     // when component mounts, get all of the user info to know whether to allow access or not
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
-        this.props.dispatch({type: 'GET_TASK_ENTRIES'});
-        this.props.dispatch({type: 'GET_PROJECTS'});
+        this.props.dispatch({ type: 'GET_TASK_ENTRIES' });
+        this.props.dispatch({ type: 'GET_PROJECTS' });
     }
 
     // if there is not a user that is logged in and now waiting for a username, push
@@ -74,13 +74,14 @@ class EntryPage extends Component {
 
     render() {
         console.log('project shit', this.props.state.ProjectsReducer.SetProjects);
+        let ProjectInfo = this.props.state.ProjectsReducer.SetProjects;
         return (
             <div>
                 <Nav />
                 <h1>Time Entries</h1>
                 <div>
                     <TaskDescription handleInputChange={this.handleInputChange} task_description={this.state.task_description} />
-                    <ProjectSelector handleInputChange={this.handleInputChange} project_name={this.state.project_name} />
+                    <ProjectSelector handleInputChange={this.handleInputChange} project_id={this.state.project_id} ProjectInfo={ProjectInfo} />
                     <Date handleInputChange={this.handleInputChange} date={this.state.date} />
                     <StartTime handleInputChange={this.handleInputChange} start_time={this.state.start_time} />
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
