@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import TimeEntry from './TimeEntry';
+import moment from 'moment';
 
 // import { connect } from 'react-redux';
 
@@ -18,7 +19,7 @@ class TimeEntryTable extends Component {
             return (<tr key={TimeEntry.id}>
                 <td>{TimeEntry.project_client}</td>
                 <td>{TimeEntry.task_description}</td>
-                <td>{TimeEntry.date}</td>
+                <td>{moment(TimeEntry.date).format('MMMM Do YYYY')}</td>
                 <td>
                     {TimeEntry.total_hours.hours} Hour,
                     {TimeEntry.total_hours.minutes} Minutes
