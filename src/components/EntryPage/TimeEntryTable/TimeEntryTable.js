@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
-// import TimeEntry from './TimeEntry';
 import moment from 'moment';
-
-// import { connect } from 'react-redux';
-
-// import { USER_ACTIONS } from '../../redux/actions/userActions';
-
-
-// const mapStateToProps = state => ({
-//     user: state.user,
-//     state
-// });
 
 class TimeEntryTable extends Component {
     render() {
-        console.log('TimeEntryTable this.props.TaskEntries', this.props.TaskEntries.SetTaskEntryTable);
+
         const TimeEntryTableRow = this.props.TaskEntries.SetTaskEntryTable.map((TimeEntry) => {
             return (<tr key={TimeEntry.id}>
                 <td>{TimeEntry.project_client}</td>

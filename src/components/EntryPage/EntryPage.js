@@ -26,7 +26,6 @@ const initialState = {
     end_time: ''
 };
 
-const TimeEntries = [];
 
 class EntryPage extends Component {
     constructor() {
@@ -54,8 +53,7 @@ class EntryPage extends Component {
     // after submission and state sent to server, 
     // clear the inputs by resetting state
     submit = (event) => {
-        TimeEntries.push(this.state);
-        console.log(TimeEntries);
+        console.log(this.state);
         this.setState(initialState); // end resetState
     }; // end submit
 
@@ -73,9 +71,7 @@ class EntryPage extends Component {
 
 
     render() {
-        console.log('project shit', this.props.state.ProjectsReducer.SetProjects);
         let ProjectInfo = this.props.state.ProjectsReducer;
-        console.log('TaskEntryTableReducer', this.props.state.TaskEntryTableReducer.SetTaskEntryTable);
         let TaskEntries = this.props.state.TaskEntryTableReducer;
         return (
             <div>
