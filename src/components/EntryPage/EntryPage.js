@@ -6,7 +6,7 @@ import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import TaskDescription from './EntryPageComponents/TaskDescription';
-import ProjectSelector from './EntryPageComponents/ProjectSelector/ProjectSelector';
+import ProjectSelector from './EntryPageComponents/ProjectSelector';
 import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
