@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProjectOption from './ProjectOption';
 
 class ProjectSelector extends Component {
 
@@ -11,15 +12,16 @@ class ProjectSelector extends Component {
 
     render() {
         console.log('ProjectInfo', this.props.ProjectInfo);
-        // let ProjectOptions = this.props.ProjectInfo.map((ProjectOption) => {
-        //     return (<ProjectOption key={ProjectOption.project_id} />)
-        // });
+        let ProjectOptionsArray = this.props.ProjectInfo.SetProjects.map((ProjectOption) => {
+            return (<option key={ProjectOption.project_id} value={ProjectOption.project_id}>{ProjectOption.client}</option>)
+        });
+        // console.log('ProjectOptions', ProjectOptionsArray);
         return (
             <div className="entryPageInput">
                 <label>Project </label>
                 <select name="project_id" value={this.props.project_id} onChange={this.handleInputChange}>
                     <option>Select One</option>
-                    {/* {ProjectOptions} */}
+                    {ProjectOptionsArray}
                 </select>
             </div>
         )

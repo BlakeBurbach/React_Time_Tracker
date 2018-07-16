@@ -20,6 +20,10 @@ class TimeEntry extends Component {
                 <td>
                     {this.props.TimeEntry.end_time}
                 </td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>
         )
     }

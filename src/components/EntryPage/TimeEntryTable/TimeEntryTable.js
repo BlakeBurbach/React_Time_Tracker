@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import TimeEntry from './TimeEntry';
+
 // import { connect } from 'react-redux';
 
 // import { USER_ACTIONS } from '../../redux/actions/userActions';
@@ -11,6 +13,18 @@ import React, { Component } from 'react';
 
 class TimeEntryTable extends Component {
     render() {
+        console.log('TimeEntryTable this.props.TaskEntries', this.props.TaskEntries.SetTaskEntryTable);
+        const TimeEntryTableRow = this.props.TaskEntries.SetTaskEntryTable.map((TimeEntry) => {
+            return (<tr key={TimeEntry.id}>
+                <td>{TimeEntry.task_description}</td>
+                <td>{TimeEntry.date}</td>
+                <td>{TimeEntry.total_hours.hours} Hour, 
+                {TimeEntry.total_hours.minutes} Minutes</td>
+                <td></td>
+                <td></td>
+            </tr>)
+        });
+
         return (
             <table className="TaskEntryTable">
                 <thead>
@@ -33,24 +47,7 @@ class TimeEntryTable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            Side Project
-                        </td>
-                        <td>
-                            Making a Thing
-                        </td>
-                        <td>
-                            7-7-2018
-                        </td>
-                        <td>
-                            40 hours 54 minutes
-                        </td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
+                    {TimeEntryTableRow}
                 </tbody>
             </table>
         )

@@ -6,7 +6,7 @@ import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import TaskDescription from './EntryPageComponents/TaskDescription';
-import ProjectSelector from './EntryPageComponents/ProjectSelector';
+import ProjectSelector from './EntryPageComponents/ProjectSelector/ProjectSelector';
 import Date from './EntryPageComponents/Date';
 import StartTime from './EntryPageComponents/StartTime';
 import EndTime from './EntryPageComponents/EndTime';
@@ -74,7 +74,9 @@ class EntryPage extends Component {
 
     render() {
         console.log('project shit', this.props.state.ProjectsReducer.SetProjects);
-        let ProjectInfo = this.props.state.ProjectsReducer.SetProjects;
+        let ProjectInfo = this.props.state.ProjectsReducer;
+        console.log('TaskEntryTableReducer', this.props.state.TaskEntryTableReducer.SetTaskEntryTable);
+        let TaskEntries = this.props.state.TaskEntryTableReducer;
         return (
             <div>
                 <Nav />
@@ -87,7 +89,7 @@ class EntryPage extends Component {
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
                     <br />
-                    <TimeEntryTable />
+                    <TimeEntryTable TaskEntries={TaskEntries}/>
                 </div>
             </div>
         );
