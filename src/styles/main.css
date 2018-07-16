@@ -104,12 +104,17 @@ li a:hover {
    padding: 20px; 
 }
 
-tr th {
+tr {
+    margin: 10px;
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(162, 162, 162);
     text-align: center;
 }
 
 th {
     font-size: 20px;
+    margin: 10px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
