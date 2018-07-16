@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TimeEntry from './TimeEntry';
+// import TimeEntry from './TimeEntry';
 
 // import { connect } from 'react-redux';
 
@@ -16,12 +16,17 @@ class TimeEntryTable extends Component {
         console.log('TimeEntryTable this.props.TaskEntries', this.props.TaskEntries.SetTaskEntryTable);
         const TimeEntryTableRow = this.props.TaskEntries.SetTaskEntryTable.map((TimeEntry) => {
             return (<tr key={TimeEntry.id}>
+                <td>{TimeEntry.project_client}</td>
                 <td>{TimeEntry.task_description}</td>
                 <td>{TimeEntry.date}</td>
-                <td>{TimeEntry.total_hours.hours} Hour, 
-                {TimeEntry.total_hours.minutes} Minutes</td>
-                <td></td>
-                <td></td>
+                <td>
+                    {TimeEntry.total_hours.hours} Hour,
+                    {TimeEntry.total_hours.minutes} Minutes
+                </td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>)
         });
 

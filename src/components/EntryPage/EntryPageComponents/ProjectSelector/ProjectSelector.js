@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProjectOption from './ProjectOption';
+// import ProjectOption from './ProjectOption';
 
 class ProjectSelector extends Component {
 
