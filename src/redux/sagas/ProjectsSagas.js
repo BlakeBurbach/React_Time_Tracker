@@ -13,7 +13,6 @@ function* ProjectsSaga() {
 function* getProjects() {
     try {
         const GetProjectsResponse = yield call(axios.get,'/api/projects');
-        yield console.log('GetProjectsResponse', GetProjectsResponse.data);
         yield put({
             type: 'SET_PROJECTS',
             payload: GetProjectsResponse.data

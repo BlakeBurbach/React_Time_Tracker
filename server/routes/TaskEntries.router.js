@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
                         (task_entries.end_time - task_entries.start_time) as total_hours,
                         projects.project_client as project_client FROM task_entries
                         JOIN projects ON task_entries.project_id = projects.id
-                        GROUP BY project_id, project_client, task_entries.id, task_description, date, total_hours;`;
+                        GROUP BY project_id, project_client, task_entries.id, task_description, date, total_hours
+                        ORDER BY task_entries.id DESC;`;
     pool.query(queryText).then((result) => {
         console.log('TaskEntryRouter GET success', result);
         res.send(result.rows);
