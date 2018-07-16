@@ -54,6 +54,7 @@ class EntryPage extends Component {
     // clear the inputs by resetting state
     submit = (event) => {
         console.log(this.state);
+        this.props.dispatch({ type: 'POST_NEW_TASK_ENTRY', payload: this.state });
         this.setState(initialState); // end resetState
     }; // end submit
 

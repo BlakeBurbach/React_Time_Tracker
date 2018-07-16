@@ -22,11 +22,19 @@ router.get('/', (req, res) => {
     }); // end pool.query
 }); // end GET route
 
-/**
- * POST route template
- */
+// POST route to send new task entry to database
 router.post('/', (req, res) => {
-
-});
+    const TaskEntry = req.body;
+    const queryText = `INSERT INTO task_entries (project_id, task_description, task_date, start_time, end_time)
+                        VALUES ($1, $2, $3, $4, $5);`;
+    pool.query(queryText, [TaskEntry.project_id, TaskEntry.task_description, TaskEntry.date, TaskEntry.start_time, TaskEntry.end_time])
+        .then((result) => {
+            console.log('TaskEntryRouter POST success', result);
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('ERROR in TaskEntriesRouter POST route', error);
+            res.sendStatus(500);
+        }); // end pool.query
+}); // end POST route
 
 module.exports = router;
