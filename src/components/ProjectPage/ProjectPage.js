@@ -5,6 +5,11 @@ import Nav from '../../components/Nav/Nav';
 
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
+import ClientName from './ProjectPageComponents/ClientName';
+import ProjectDescription from './ProjectPageComponents/ProjectDescription';
+import PayPerHour from './ProjectPageComponents/PayPerHour';
+import SubmitProjectButton from './ProjectPageComponents/SubmitProjectButton';
+
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -26,6 +31,12 @@ class ProjectPage extends Component {
       <div>
         <Nav />
         <h1>Current Projects</h1>
+        <div>
+          <ClientName />
+          <ProjectDescription />
+          <PayPerHour />
+          <SubmitProjectButton />
+        </div>
       </div>
     );
   }
