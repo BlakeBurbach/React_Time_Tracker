@@ -49,9 +49,7 @@ class EntryPage extends Component {
         }
     };
 
-    // TODO: send state to database on submission
-    // after submission and state sent to server, 
-    // clear the inputs by resetting state
+
     submit = (event) => {
         console.log(this.state);
         this.props.dispatch({ type: 'POST_NEW_TASK_ENTRY', payload: this.state });
@@ -86,7 +84,7 @@ class EntryPage extends Component {
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
                     <br />
-                    <TimeEntryTable TaskEntries={TaskEntries}/>
+                    <TimeEntryTable TaskEntries={TaskEntries} />
                 </div>
             </div>
         );
