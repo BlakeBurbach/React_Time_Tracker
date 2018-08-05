@@ -13,7 +13,7 @@ class ClientName extends Component {
         return (
             <div className="entryPageInput">
             <label>Client </label>
-                <input type="text" name="project_client" value={this.props.project_client} onChange={this.handleInputChange}/>
+                <input type="text" name="project_client" placeholder="name" value={this.props.project_client} onChange={this.handleInputChange}/>
             </div>
         )
     }

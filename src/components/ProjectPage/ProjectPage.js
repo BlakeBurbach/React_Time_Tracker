@@ -64,8 +64,8 @@ class ProjectPage extends Component {
         <h1>Current Projects</h1>
         <div>
           <ClientName project_client={this.state.project_client} handleInputChange={this.handleInputChange} />
-          <ProjectDescription project_client={this.state.project_description} handleInputChange={this.handleInputChange} />
-          <PayPerHour project_client={this.state.pay_per_hour} handleInputChange={this.handleInputChange} />
+          <ProjectDescription project_description={this.state.project_description} handleInputChange={this.handleInputChange} />
+          <PayPerHour pay_per_hour={this.state.pay_per_hour} handleInputChange={this.handleInputChange} />
           <SubmitProjectButton submit={this.submit}/>
         </div>
       </div>

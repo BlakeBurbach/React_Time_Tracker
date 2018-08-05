@@ -13,7 +13,7 @@ class PayPerHour extends Component {
         return (
             <div className="entryPageInput">
             <label>$/hr </label>
-                <input type="text" name="pay_per_hour" value={this.props.pay_per_hour} onChange={this.handleInputChange}/>
+                <input type="text" name="pay_per_hour" placeholder="0" value={this.props.pay_per_hour} onChange={this.handleInputChange}/>
             </div>
         )
     }
