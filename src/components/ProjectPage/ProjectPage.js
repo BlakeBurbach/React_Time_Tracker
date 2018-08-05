@@ -32,6 +32,7 @@ class ProjectPage extends Component {
 
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
+    this.props.dispatch({ type: 'GET_PROJECTS' });
   }
 
   componentDidUpdate() {
@@ -59,6 +60,7 @@ class ProjectPage extends Component {
   }; // end submit
 
   render() {
+    let ProjectInfo = this.props.state.ProjectsReducer;
     return (
       <div>
         <Nav />
@@ -69,7 +71,7 @@ class ProjectPage extends Component {
           <PayPerHour pay_per_hour={this.state.pay_per_hour} handleInputChange={this.handleInputChange} />
           <SubmitProjectButton submit={this.submit} />
         </div>
-        <ProjectTable />
+        <ProjectTable ProjectInfo={ProjectInfo} />
       </div>
     );
   }
