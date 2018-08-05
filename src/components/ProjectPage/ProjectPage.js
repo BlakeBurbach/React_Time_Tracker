@@ -9,6 +9,7 @@ import ClientName from './ProjectPageComponents/ClientName';
 import ProjectDescription from './ProjectPageComponents/ProjectDescription';
 import PayPerHour from './ProjectPageComponents/PayPerHour';
 import SubmitProjectButton from './ProjectPageComponents/SubmitProjectButton';
+import ProjectTable from './ProjectTable/ProjectTable';
 
 
 const mapStateToProps = state => ({
@@ -62,12 +63,13 @@ class ProjectPage extends Component {
       <div>
         <Nav />
         <h1>Current Projects</h1>
-        <div>
+        <div className="project_inputs">
           <ClientName project_client={this.state.project_client} handleInputChange={this.handleInputChange} />
           <ProjectDescription project_description={this.state.project_description} handleInputChange={this.handleInputChange} />
           <PayPerHour pay_per_hour={this.state.pay_per_hour} handleInputChange={this.handleInputChange} />
-          <SubmitProjectButton submit={this.submit}/>
+          <SubmitProjectButton submit={this.submit} />
         </div>
+        <ProjectTable />
       </div>
     );
   }

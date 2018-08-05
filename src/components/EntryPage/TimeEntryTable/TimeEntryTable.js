@@ -21,7 +21,7 @@ class TimeEntryTable extends Component {
         });
 
         return (
-            <table className="TaskEntryTable">
+            <table className="Table">
                 <thead>
                     <tr>
                         <th>

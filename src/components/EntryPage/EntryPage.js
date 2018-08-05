@@ -76,16 +76,15 @@ class EntryPage extends Component {
             <div>
                 <Nav />
                 <h1>Time Entries</h1>
-                <div>
+                <div className="task_entry_inputs">
                     <TaskDescription handleInputChange={this.handleInputChange} task_description={this.state.task_description} />
                     <ProjectSelector handleInputChange={this.handleInputChange} project_id={this.state.project_id} ProjectInfo={ProjectInfo} />
                     <Date handleInputChange={this.handleInputChange} date={this.state.date} />
                     <StartTime handleInputChange={this.handleInputChange} start_time={this.state.start_time} />
                     <EndTime handleInputChange={this.handleInputChange} end_time={this.state.end_time} />
                     <SubmitTaskButton submit={this.submit} />
-                    <br />
-                    <TimeEntryTable TaskEntries={TaskEntries} />
                 </div>
+                    <TimeEntryTable TaskEntries={TaskEntries} />
             </div>
         );
     } // end render

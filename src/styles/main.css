@@ -1,5 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
 }
 
 .instructions h1 {
@@ -93,28 +94,35 @@ li a:hover {
     float: right;
 }
 
+.project_inputs {
+    max-width: 100%;
+    margin-left: 20%;
+    margin-right: 10%;    
+}
+
+.task_entry_inputs {
+    max-width: 100%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
 .entryPageInput {
-    float: left;
+    display: inline;
     margin: 10px;
 }
 
-.TaskEntryTable {
-   margin: 50px;
-   margin-left: 100px;
+.Table {
    padding: 20px; 
+   border-collapse: collapse;
+   text-align: left;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
-tr {
-    margin: 10px;
-    padding: 20px;
-    border-bottom: 1px solid rgb(162, 162, 162);
-    text-align: center;
-}
+        .Table td, th {
+            margin: 10px;
+            padding: 20px;
+            border-bottom: 1px solid rgb(162, 162, 162);
+        }
 
-th {
-    font-size: 20px;
-    margin: 10px;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
