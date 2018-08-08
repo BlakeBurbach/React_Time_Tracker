@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 class ProjectTable extends Component {
-    constructor() {
-        super();
-    }
+
     render() {
         console.log('Projects Table', this.props.ProjectInfo);
         const ProjectTableRow = this.props.ProjectInfo.SetProjects.map((Project) => {
